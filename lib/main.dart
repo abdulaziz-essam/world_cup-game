@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import "./mainpage.dart";
+import 'questions/questionsPage.dart';
+import 'animated_bottom_navigation_bar.dart';
+import "./landingPage.dart";
 void main() {
   runApp(const MyApp());
 }
@@ -11,16 +13,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       title: 'Flutter Demo',
         initialRoute: '/',
         routes: {
           // When navigating to the "/" route, build the FirstScreen widget.
           '/': (context) => const MyHomePage(title: 'World cup app',),
-          '/second': (context) => const MainPage(title: '',),
+          '/questions': (context) => const MainPage(title: 'quiz',),
+          '/second': (context) => LandingPage(),
+
         },
       theme: ThemeData(
 
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
       ),
     );
   }
@@ -54,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+
       appBar: AppBar(
 
         title: Text(widget.title),
@@ -85,6 +91,7 @@ child: Text("Start World Cup Quizz"),
     ),
 
     ),
+
 
     );
 
