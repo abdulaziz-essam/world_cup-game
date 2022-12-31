@@ -11,6 +11,7 @@ class MainPage extends StatefulWidget {
   State<MainPage> createState() => _MainPage();
 }
 
+
 class _MainPage extends State<MainPage> {
   int _counter = 0;
   int ques_number=0;
@@ -28,7 +29,7 @@ class _MainPage extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     Questions question_obj = new Questions();
-    List questions=question_obj.getQuestions();
+    List questions=question_obj.getCountryQuestions();
 
     return Scaffold(
       appBar: AppBar(
@@ -61,8 +62,12 @@ class _MainPage extends State<MainPage> {
                 // Within the SecondScreen widget
                 onPressed: () {
                 setState(() {
-                  if(ques_number<3){
+                  if(ques_number<2){
                     ques_number+=1;
+                    print("a");
+                  }else{
+                    ques_number=0;
+                    print("b");
                   }
                 });
 

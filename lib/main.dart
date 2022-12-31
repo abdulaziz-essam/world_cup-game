@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'questions/questionsPage.dart';
-import 'animated_bottom_navigation_bar.dart';
+import './leaderboard/leaderboard.dart';
 import "./landingPage.dart";
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           // When navigating to the "/" route, build the FirstScreen widget.
           '/': (context) => const MyHomePage(title: 'World cup app',),
           '/questions': (context) => const MainPage(title: 'quiz',),
-          '/second': (context) => LandingPage(),
+          '/second': (context) => Leaderboard(),
 
         },
       theme: ThemeData(
@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
         Container(
 
-          child: Text("Welcome in World Cup quiz app",style: TextStyle(fontSize: 40),),
+          child: Image.asset("images/worldcuplogo.png",height: 500,width: 800,)
 
         ),
         Container(
