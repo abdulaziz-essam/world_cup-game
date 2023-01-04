@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:world_cup/leaderboard/leaderboard.dart';
 import './questions.dart';
 
 class MainPage extends StatefulWidget {
@@ -61,15 +62,19 @@ class _MainPage extends State<MainPage> {
                 ),
                 // Within the SecondScreen widget
                 onPressed: () {
-                setState(() {
-                  if(ques_number<2){
-                    ques_number+=1;
-                    print("a");
-                  }else{
-                    ques_number=0;
-                    print("b");
-                  }
-                });
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  Leaderboard()),);
+                // setState(() {
+                //   if(ques_number<2){
+                //     ques_number+=1;
+                //     print("a");
+                //   }else{
+                //     ques_number=0;
+                //     print("b");
+                //   }
+                // }
+
 
 
                 },
@@ -125,15 +130,15 @@ class _MainPage extends State<MainPage> {
               ),
             ),
           ),
-          Container(
-            child: TextButton(
-              onPressed: () {
-                // Navigate to the second screen using a named route.
-                Navigator.pushNamed(context, '/second');
-              },
-              child: Text("Start World Cup Quizz"),
-            ),
-          ),
+          // Container(
+          //   child: TextButton(
+          //     onPressed: () {
+          //       // Navigate to the second screen using a named route.
+          //       Navigator.pushNamed(context, '/second');
+          //     },
+          //     child: Text("Start World Cup Quizz"),
+          //   ),
+          // ),
         ],
       ),
     );

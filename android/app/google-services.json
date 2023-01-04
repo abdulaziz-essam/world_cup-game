@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "442028531736",
+    "firebase_url": "https://login4900-c1421.firebaseio.com",
+    "project_id": "login4900-c1421",
+    "storage_bucket": "login4900-c1421.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442028531736:android:1475711681acb70f72636d",
+        "android_client_info": {
+          "package_name": "com.example.world_cup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "442028531736-hpnn3c4i499rt28bj39ssp6bf3at4g3l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-ZsMATdLmRGDE284foKkOzdqC7RhiaFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "442028531736-hpnn3c4i499rt28bj39ssp6bf3at4g3l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "442028531736-p96qgr0v9n2m4cr69j1q150h81ebkcuc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.worldCup"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

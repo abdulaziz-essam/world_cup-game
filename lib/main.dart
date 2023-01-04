@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'questions/questionsPage.dart';
 import './leaderboard/leaderboard.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import "./landingPage.dart";
-void main() {
+import 'package:firebase_database/firebase_database.dart';
+void  main()  async{
+
+
   runApp(const MyApp());
 }
 
@@ -20,7 +25,7 @@ class MyApp extends StatelessWidget {
           // When navigating to the "/" route, build the FirstScreen widget.
           '/': (context) => const MyHomePage(title: 'World cup app',),
           '/questions': (context) => const MainPage(title: 'quiz',),
-          '/second': (context) => Leaderboard(),
+          '/second': (context) => LandingPage(),
 
         },
       theme: ThemeData(

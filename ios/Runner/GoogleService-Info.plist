@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>442028531736-p96qgr0v9n2m4cr69j1q150h81ebkcuc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.442028531736-p96qgr0v9n2m4cr69j1q150h81ebkcuc</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>442028531736-pe40aofudlnvdnef85pen81f2lhs8gdr.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDfmvL_W1CRfkVP45nCHvNmtgwMsLCQjY8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>442028531736</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.worldCup</string>
+	<key>PROJECT_ID</key>
+	<string>login4900-c1421</string>
+	<key>STORAGE_BUCKET</key>
+	<string>login4900-c1421.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:442028531736:ios:4c590df0a700303672636d</string>
+	<key>DATABASE_URL</key>
+	<string>https://login4900-c1421.firebaseio.com</string>
+</dict>
+</plist>

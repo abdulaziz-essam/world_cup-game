@@ -1,95 +1,84 @@
-import 'package:flag/flag.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
-import 'package:world_cup/landingPage.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_core/firebase_core.dart';
+import '../firebase_options.dart';
+void main () async{
+
+
+  runApp(Leaderboard());
+}
+class Leaderboard extends StatefulWidget {
+  fireBase()async{
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    DatabaseReference ref = FirebaseDatabase.instance.ref("users");
+
+    await ref.update({
+      "123/age": 1111111111,
+      "123/address/line1": "1 Mountain View",
+    });}
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+class _MyAppState extends State<Leaderboard> {
 
 
 
-void main() => runApp( Leaderboard());
-
-class Leaderboard extends StatelessWidget {
 
 
+  List<Map> _books = [
+    {
+      'id': 100,
+      'Name': 'yasser',
+      'score': '88'
+    },
+    {
+      'id': 102,
+      'Name': 'Khalid',
+      'score': '55'
+    },
+    {
+      'id': 101,
+      'Name': 'Ahmad ',
+      'score': ' 22'
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-
-      home: MyHomePage(title: '',),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  bool? displayFlagPicker;
-List score=[{"score":4 ,"name":"ahmad"},{"score":4 ,"name":"ahmad"},{"score":4 ,"name":"ahmad"},{"score":4 ,"name":"ahmad"}];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Game Over',
-
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Leaderboard'),
         ),
-
-             SizedBox(height: 20),
-            Container(
-              height: 500,
-              width: 500,
-              child: SingleChildScrollView(
-                child: DefaultTextStyle(
-                  style: const TextStyle(color: Colors.white),
-                  child: DataTable(
-                      dataTextStyle: const TextStyle(color: Colors.white),
-                      columns: const [
-                        DataColumn(
-                          label: Text('Rank'),
-                        ),
-                        DataColumn(
-                          label: Text('Name'),
-                        ),
-                        DataColumn(
-                          label: Text('Score'),
-                        ),
-                      ],
-                      rows: List.generate(score.length, (index) {
-                        final leaderboard = score[index];
-                        return DataRow(
-                          cells: [
-                            DataCell(Text('${index + 1}')),
-                            DataCell(Text(
-                              // leaderboard.name,
-"a"
-
-                              ),
-                            ),
-                            DataCell(Text("yes")),
-                        // leaderboard.score.toString())
-                          ],
-                        );
-                      })),
-                ),
-              ),
-            ),
+        body: ListView(
+          children: [
+            _createDataTable()
           ],
         ),
       ),
     );
   }
+  DataTable _createDataTable() {
+    return DataTable(columns: _createColumns(), rows: _createRows());
+  }
+  List<DataColumn> _createColumns() {
+    return [
+      DataColumn(label: Text('ID')),
+      DataColumn(label: Text('Book')),
+      DataColumn(label: Text('Author'))
+    ];
+  }
+  List<DataRow> _createRows() {
+    return _books
+        .map((book) => DataRow(cells: [
+      DataCell(Text('#' + book['id'].toString())),
+      DataCell(Text(book['title'])),
+      DataCell(Text(book['author']))
+    ]))
+        .toList();
+  }
 }
-
-
+// Basic styling and config
